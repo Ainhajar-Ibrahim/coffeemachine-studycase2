@@ -56,10 +56,6 @@ public class hardware extends Thread   {
                         send(s, signal.SUGAR_OK);
                         System.out.println("sugar has been added");
                     }
-                    case signal.ADD_BOTH -> {
-                        send(s, signal.BOTH_OK);
-                        System.out.println("sugar and milk have been added");
-                    }
                 }
 
 

@@ -14,8 +14,6 @@ public class signal {
     public static final int SUGAR_OK =40;
     public static final int ADD_MILK =5;
     public static final int MILK_OK =50;
-    public static final int ADD_BOTH =6;
-    public static final int BOTH_OK =60;
 
     public signal(int message) {
         this.message = message;
