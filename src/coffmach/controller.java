@@ -52,7 +52,7 @@ public class controller extends Thread  {
                         {send(s,signal.ADD_MILK);
                     System.out.println(("milk first"));
                     try {
-                        s.wait();
+                        s.wait(100);
                         System.out.println(s.getMessage());
 
 
@@ -62,7 +62,7 @@ public class controller extends Thread  {
 
                     send(s,signal.ADD_SUGAR);
                     System.out.println("sugar will be added");
-                    break;}
+                        }
 
                 case 4 -> System.out.println("a regular coffee with no additions");
                 default -> System.out.println("unknown command ");

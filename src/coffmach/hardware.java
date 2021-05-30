@@ -2,7 +2,7 @@ package coffmach;
 
 public class hardware extends Thread   {
 
-    signal s;
+    final signal s;
 
     public hardware(signal m) {
         this.s=m;
@@ -27,15 +27,15 @@ public class hardware extends Thread   {
             try {
                 s.wait();
                 System.out.println(s.getMessage());
-                switch(s.getMessage()){
-                    case signal.FILL_COFFEE:
-                        send(s,signal.COFFEE_OK);
+                switch (s.getMessage()) {
+                    case signal.FILL_COFFEE -> {
+                        send(s, signal.COFFEE_OK);
                         System.out.println("coffee has been filled");
-                        break;
-                    case signal.HEAT_WATER:
+                    }
+                    case signal.HEAT_WATER -> {
                         send(s, signal.WARM_WATER);
                         System.out.println("water has been heated");
-                        break;
+                    }
                 }
 
 
@@ -45,21 +45,21 @@ public class hardware extends Thread   {
 
 
             try {
-                s.wait();
+                s.wait(100);
                 System.out.println(s.getMessage());
-                switch(s.getMessage()){
-                    case signal.ADD_MILK:
-                        send(s,signal.MILK_OK);
+                switch (s.getMessage()) {
+                    case signal.ADD_MILK -> {
+                        send(s, signal.MILK_OK);
                         System.out.println("milk has been filled");
-                        break;
-                    case signal.ADD_SUGAR:
+                    }
+                    case signal.ADD_SUGAR -> {
                         send(s, signal.SUGAR_OK);
                         System.out.println("sugar has been added");
-                        break;
-                    case signal.ADD_BOTH:
-                        send(s,signal.BOTH_OK);
+                    }
+                    case signal.ADD_BOTH -> {
+                        send(s, signal.BOTH_OK);
                         System.out.println("sugar and milk have been added");
-                        break;
+                    }
                 }
 
 

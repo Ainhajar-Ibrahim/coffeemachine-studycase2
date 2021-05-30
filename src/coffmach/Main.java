@@ -61,7 +61,6 @@ public class Main implements fromuser,touser {
                             price = 0;
                             System.out.println("you can only insert 5 or 10");
                             touser.returnChange(money1, price);
-                            touser.showMenu();
                         }
                     }
 
